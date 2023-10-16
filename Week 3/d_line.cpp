@@ -16,9 +16,28 @@ void solve() {
         }
     }
 
-    for (int i = 0; i < n / 2; i++) {
-        
+    int i = 0, k = 1;
+    while (i < n / 2 and k <= n) {
+        if (s[i] == 'L') {
+            sum -= i;
+            sum += (n - i - 1);
+            k++;
+            cout << sum << " ";
+        }
+        if (s[n - i - 1] == 'R') {
+            sum -= i;
+            sum += (n - i - 1);
+            k++;
+            cout << sum << " ";
+        }
+        i++;
     }
+
+    while (k <= n) {
+        cout << sum << " ";
+        k++;
+    }
+    cout << "\n";
 }
 
 int main() {

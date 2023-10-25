@@ -22,8 +22,16 @@ void solve() {
         int typ, val; cin >> typ >> val;
         if (typ == 0) {
             sum += (even * val);
+            if (val & 1) {
+                odd += even;
+                even = 0;
+            }
         } else {
             sum += (odd * val);
+            if (val & 1) {
+                even += odd;
+                odd = 0;
+            }
         }
 
         cout << sum << "\n";

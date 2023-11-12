@@ -8,7 +8,22 @@ void solve() {
         cin >> arr[i];
     }
 
+    int cnt = 0;
     
+    for (int i = n - 1; i >= 0; i--) {
+        if (arr[i] < i) {
+            cout << -1 << "\n";
+            return;
+        }
+        for (int j = i - 1; j >= 0; j--) {
+            while (arr[j] >= arr[i]) {
+                cnt++;
+                arr[j] /= 2;
+            } 
+        }
+    }
+
+    cout << cnt << "\n";
 }
 
 int main() {
